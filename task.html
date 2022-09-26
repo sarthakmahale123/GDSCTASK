@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDSC TASK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+       body{
+        background-image: url("https://wallpaperaccess.com/full/2384069.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Ubuntu', sans-serif;
+       }
+       .main{
+        width: 100%;
+        height: 100px;
+       }
+       #card{
+        width: 40%;
+        height: 300px;
+        padding: 34px ;
+        border-radius: 25px;
+        margin: 35px auto;
+        background-color: white;
+       }
+       .h1{
+            font-size: 1.81rem;
+            margin-bottom: 10px;
+            font-family: "Acme",sans-serif;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 2px;
+            color: black;
+            text-shadow: 0 4.89173px 39.3504px rgb(218 204 255 / 80%);
+            margin: .8rem 0;
+            text-align: center;
+       }
+       .btn{
+        width: 100%;
+        padding: 5px;
+        background-color: #3498db;
+        align-self: center;
+        cursor: pointer;
+       }
+       .btn:hover{
+        background-color: red;
+       }
+       
+
+    </style>
+</head>
+<body>
+    <div class="h1">
+        <h1>Welcome To The Quiz App!!</h1>
+    </div>
+    <div class="main">
+        <div id="card">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br><br><br><br><br>
+
+            <button class="btn">
+                SUBMIT
+
+
+            </button> 
+        
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+        AddQuestion();
+
+        });
+
+        AddQuestion = ()=>{
+            const url ='https://opentdb.com/api.php?amount=10';
+            fetch(url) 
+            .then(data => data.json())
+            .then(result => showQuestion(result.results));
+            
+        }
+        showQuestion = questions =>{
+            
+            let questionHTML = document.createElement('div');
+
+            questions.forEach(question => {
+                console.log(question);
+            })
+        }
+
+        
+    </script>
+</body>
+</html>
